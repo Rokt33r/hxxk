@@ -1,0 +1,67 @@
+{
+  "name": "hxxk",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [
+    "react",
+    "hook",
+    "state",
+    "store",
+    "context"
+  ],
+  "author": "Junyoung Choi <rokt33r.choi@gmail.com>",
+  "homepage": "https://github.com/boostio/hkkx",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/index.d.ts",
+    "dist/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boostio/hkkx.git"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc -P tsconfig.build.json",
+    "lint": "prettier --check src/**/*.{ts,tsx} specs/**/*.{ts,tsx} examples/*/src/**/*.{ts,tsx}",
+    "format": "prettier --write src/**/*.{ts,tsx} specs/**/*.{ts,tsx} examples/*/src/**/*.{ts,tsx}",
+    "test": "npm run lint && npm run test-type && npm run test-coverage",
+    "test-api": "jest",
+    "test-type": "tsc --noEmit",
+    "test-coverage": "jest --coverage",
+    "codecov": "codecov -f coverage/*.json",
+    "prepublishOnly": "npm test && npm run build"
+  },
+  "bugs": {
+    "url": "https://github.com/boostio/hkkx/issues"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^9.1.4",
+    "@testing-library/react-hooks": "^2.0.1",
+    "@types/jest": "^24.0.13",
+    "@types/react": "^16.9.2",
+    "codecov": "^3.5.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.17.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.6.2"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "jsdom",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/",
+      "/examples/"
+    ]
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.9.0"
+  }
+}
